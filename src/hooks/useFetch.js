@@ -1,0 +1,25 @@
+import axios from "axios"
+import { useState } from "react"
+import getConfiToken from "../services/getConfiToken"
+
+const useFetch = () => {
+    
+    const [infoApi, setInfoApi] = useState()
+    const baseUrl = 'https://playlist-share-dev.fl0.io'
+
+    const getApi = (path) => {
+
+        const url = `${baseUrl}${path}`
+
+
+        axios
+        .get(url, getConfiToken())
+        .then(res => setInfoApi(res.data))
+        .catch(err => console.log(err))
+    }
+
+    return [infoApi, getApi]
+
+}
+
+export default useFetch
