@@ -1,0 +1,79 @@
+.home__register {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/spotify.png');
+    background-position: center;
+    background-size: cover;
+    border: 10px solid rgb(52, 165, 0);
+}
+
+.register__page {
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 75%;
+    height: 75%;
+    transform: translate(-50%, -40%);
+    background-image: url('../images/spotify.png');
+    background-position: center;
+    background-size: cover;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 6px 2px 2px rgba(52, 165, 0, 0.329);
+}
+
+.register {
+    text-align: center;
+    color: #000000;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    height: 72vh;
+    padding: 60px 30px;
+    border-radius: 10px;
+}
+
+.register__form {
+    margin-top: 20px;
+}
+
+.register__title {
+    font-weight: 900;
+}
+
+.register__email {
+    margin-bottom: 15px;
+}
+
+.register__input {
+    background-color: #0000008a;
+    border-radius: 5px;
+    color: white;
+    font-weight: 800;
+}
+
+.button__submit {
+    margin-bottom: 10px;
+    width: 90px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(0, 163, 0);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border: 2px solid white;
+    box-shadow: 2px 2px 2px 2px white;
+}
+
+.register__h4 {
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.register__p {
+    font-weight: 900;
+}

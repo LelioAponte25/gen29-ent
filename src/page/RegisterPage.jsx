@@ -1,40 +1,45 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import './styles/RegisterPage.css'
 
 const RegisterPage = () => {
 
     const { reset, handleSubmit, register } = useForm()
-    const {registerUser} = useAuth()
+    const { registerUser } = useAuth()
 
     const submit = data => {
         registerUser(data)
         reset({
             name: '',
             email: '',
-            password:''
+            password: ''
         })
     }
 
     return (
-        <div>
-            <img src="/images/image-register.png" alt="" />
-            <form onSubmit={handleSubmit(submit)}>
-            <div>
-                <label htmlFor="email">Email</label>
-                <input {...register('email')}  type="email" id="email" />
-            </div>
-            <div>
-                <label htmlFor="name">Name</label>
-                <input {...register('name')} type="text" id="name" />
-            </div>
-                <div>
-                    <label htmlFor="password">Password</label>
-                    <input {...register('password')}  type="password" id="password" />
+        <div className="home__register">
+            <div className="register__page">
+                <div className="register">
+                <h1 className="register__title">GIFT SPOTIFY</h1>
+                    <form className="register__form" onSubmit={handleSubmit(submit)}>
+                        <div className="register__email">
+                            <h4 className="register__h4" htmlFor="email">Email</h4>
+                            <input className="register__input" {...register('email')} type="email" id="email" />
+                        </div>
+                        <div className="register__email">
+                            <h4 className="register__h4" htmlFor="name">Name</h4>
+                            <input className="register__input" {...register('name')} type="text" id="name" />
+                        </div>
+                        <div className="register__email">
+                            <h4 className="register__h4" htmlFor="password">Password</h4>
+                            <input className="register__input" {...register('password')} type="password" id="password" />
+                        </div>
+                        <button className="button__submit">Submit</button>
+                        <p className="register__p">Are your register? <Link to='/auth/login'>Go to login</Link></p>
+                    </form>
                 </div>
-                <button>Submit</button>
-                <p>Are your register? <Link to='/auth/login'>Go to login</Link></p>
-            </form>
+            </div>
         </div>
     )
 }
